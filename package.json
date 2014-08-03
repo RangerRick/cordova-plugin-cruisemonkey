@@ -1,0 +1,16 @@
+{
+    "version": "1.0.0",
+    "name": "com.raccoonfink.cordova.plugin.cruisemonkey",
+    "cordova_name": "CDVCruiseMonkey",
+    "description": "CruiseMonkey Native Code",
+    "license": "Proprietary",
+    "keywords": [
+        "phonegap"
+    ],
+    "engines": [
+        {
+            "name": "cordova",
+            "version": ">=3.0.0"
+        }
+    ]
+}

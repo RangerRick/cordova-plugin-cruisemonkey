@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.raccoonfink.cordova.plugin.cruisemonkey"
+    version="1.0.0">
+    <name>CDVCruiseMonkey</name>
+    <description>CruiseMonkey Native Code</description>
+    <license>Proprietary</license>
+    <keywords>phonegap</keywords>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+    <platform name="ios">
+
+        <!-- required background modes:  App registers for location updates -->
+        <config-file target="*-Info.plist" parent="UIBackgroundModes">
+            <array>
+                <string>fetch</string>
+            </array>
+        </config-file>
+
+        <config-file target="config.xml" parent="/*">
+            <feature name="CruiseMonkey">
+                <param name="ios-package" value="CDVCruiseMonkey"/>
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/ios/CDVCruiseMonkey.m" />
+        <header-file src="src/ios/CDVCruiseMonkey.h" />
+
+        <js-module src="www/CruiseMonkey.js" name="CruiseMonkey">
+            <clobbers target="plugins.cm" />
+        </js-module>
+     </platform>          
+
+</plugin>
